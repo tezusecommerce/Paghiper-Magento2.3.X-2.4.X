@@ -2,7 +2,7 @@
 
 ## Instalação
 
-> Recomendamos que você possua um ambiente de testes para validar as alterações e atualizações antes de atualiar sua loja em produção. Também, que seja feito um **backup** com todas as informações antes de executar qualquer procedimento de atualização/instalação.
+> Recomendamos que você possua um ambiente de testes para validar as alterações e atualizações antes de atualizar sua loja em produção. Também, que seja feito um **backup** com todas as informações antes de executar qualquer procedimento de atualização/instalação.
 
 ### Versões Compativeis:
 
