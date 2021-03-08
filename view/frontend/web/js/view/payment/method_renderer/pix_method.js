@@ -9,7 +9,7 @@ define(
     'use strict';
     return Component.extend({
       defaults: {
-        template: 'Tezus_PagHiper/payment/pix',
+        template: 'Paghiper_Magento2/payment/pix',
         cpfCnpj: '',
       },
 
