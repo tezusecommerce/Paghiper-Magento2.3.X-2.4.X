@@ -11,7 +11,7 @@ define(
     rendererList.push(
       {
         type: 'paghiper_pix',
-        component: 'Tezus_PagHiper/js/view/payment/method_renderer/pix_method'
+        component: 'Paghiper_Magento2/js/view/payment/method_renderer/pix_method'
       },
       // other payment method renderers if required
     );
