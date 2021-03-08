@@ -6,7 +6,7 @@
   </head>
   <body>
     <referenceContainer name="content">
-      <block class="Paghiper\Magento2\Block\Order\Payment\Info" template="Tezus_PagHiper::order/payment/info.phtml"/>
+      <block class="Paghiper\Magento2\Block\Order\Payment\Info" template="Paghiper_Magento2::order/payment/info.phtml"/>
     </referenceContainer>
   </body>
 </page> 
