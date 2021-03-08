@@ -9,7 +9,7 @@ define(
     'use strict';
     return Component.extend({
       defaults: {
-        template: 'Tezus_PagHiper/payment/boleto',
+        template: 'Paghiper_Magento2/payment/boleto',
         cpfCnpj: '',
       },
 
