@@ -25,7 +25,7 @@
                             <item name="renders" xsi:type="array">
                               <item name="children" xsi:type="array">
                                 <item name="paghiper_boleto" xsi:type="array">
-                                  <item name="component" xsi:type="string">Tezus_PagHiper/js/view/payment/paghiper_boleto</item>
+                                  <item name="component" xsi:type="string">Paghiper_Magento2/js/view/payment/paghiper_boleto</item>
                                   <item name="methods" xsi:type="array">
                                     <item name="paghiper_boleto" xsi:type="array">
                                       <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
@@ -33,7 +33,7 @@
                                   </item>
                                 </item>
                                 <item name="paghiper_pix" xsi:type="array">
-                                  <item name="component" xsi:type="string">Tezus_PagHiper/js/view/payment/paghiper_pix</item>
+                                  <item name="component" xsi:type="string">Paghiper_Magento2/js/view/payment/paghiper_pix</item>
                                   <item name="methods" xsi:type="array">
                                     <item name="paghiper_pix" xsi:type="array">
                                       <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
