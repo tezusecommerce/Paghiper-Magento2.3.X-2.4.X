@@ -10,7 +10,7 @@
       "name": "Paghiper"
     }
   ],
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "require": {},
   "autoload": {
     "files": [
