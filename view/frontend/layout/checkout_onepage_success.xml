@@ -6,7 +6,7 @@
   </head>
   <body>
     <referenceContainer name="page.main.title">
-      <block class="Paghiper\Magento2\Block\Checkout\Success" name="paghiper.info.payment" template="Tezus_PagHiper::checkout/success.phtml" after="-" />
+      <block class="Paghiper\Magento2\Block\Checkout\Success" name="paghiper.info.payment" template="Paghiper_Magento2::checkout/success.phtml" after="-" />
     </referenceContainer>
   </body>
 </page>
