@@ -124,9 +124,6 @@ class UpdateStatus extends Action implements CsrfAwareActionInterface {
             if (!$order->getId()) {
               throw new \Magento\Framework\Webapi\Exception(__("Order Id not found"), 0, \Magento\Framework\Webapi\Exception::HTTP_NOT_FOUND);
             }
-            if ($order->getStatus() !== static::STATUS_PENDING) {
-              throw new \Magento\Framework\Webapi\Exception(__("Order Status isn't pending"), 0, \Magento\Framework\Webapi\Exception::HTTP_BAD_REQUEST);
-            }
             $event = $base->status;
             if ($event == static::STATUS_PAID or $event == static::STATUS_RESERVED) {
               $order->setState(\Magento\Sales\Model\Order::STATE_PROCESSING);
