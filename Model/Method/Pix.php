@@ -142,7 +142,7 @@ class Pix extends \Magento\Payment\Model\Method\AbstractMethod {
       $order->setPaghiperTransaction($transactionToken);
       $order->setPaghiperPix($pixcode);
       $order->setPaghiperChavepix($emv);
-      $payment->setSkipOrderProcessing(true);
+
     } catch (\Exception $e) {
       throw new \Magento\Framework\Exception\LocalizedException(__($e->getMessage()));
     }

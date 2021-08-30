@@ -167,7 +167,7 @@ class Boleto extends \Magento\Payment\Model\Method\AbstractMethod {
       $order->setPaghiperTransaction($transactionToken);
       $order->setPaghiperBoleto($boletoUrl);
       $order->setPaghiperBoletoDigitavel($linha_digitavel);
-      $payment->setSkipOrderProcessing(true);
+
     } catch (\Exception $e) {
       throw new \Magento\Framework\Exception\LocalizedException(__($e->getMessage()));
     }
