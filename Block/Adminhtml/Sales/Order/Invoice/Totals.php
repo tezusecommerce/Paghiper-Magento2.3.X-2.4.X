@@ -56,7 +56,7 @@ class Totals extends Template
       [
         'code' => 'paghiper_fee',
         'value' => $this->getSource()->getDataByKey('paghiper_fee_amount'),
-        'label' => __('Paghiper Tax')
+        'label' => __('Juros/Multa Paghiper')
       ]
     );
 
