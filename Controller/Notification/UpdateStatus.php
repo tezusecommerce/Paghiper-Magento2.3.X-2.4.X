@@ -6,9 +6,7 @@ use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\ResponseInterface;
-use Magento\Framework\View\Result\PageFactory;
 use Magento\Sales\Api\OrderRepositoryInterface;
-use Magento\Sales\Model\OrderFactory;
 use Paghiper\Magento2\Helper\Data;
 use Magento\Framework\Api\SearchCriteriaBuilder;
 use Magento\Framework\App\CsrfAwareActionInterface;
@@ -33,25 +31,16 @@ class UpdateStatus extends Action implements CsrfAwareActionInterface {
   protected $helperData;
 
   /**
-   * @var OrderFactory
-   */
-  protected $orderFactory;
-
-  /**
    * @var OrderRepositoryInterface
    */
   protected $orderRepository;
 
   public function __construct(
     Context $context,
-    PageFactory $pageFactory,
     OrderRepositoryInterface $orderRepository,
-    OrderFactory $orderFactory,
     Data $helper,
     SearchCriteriaBuilder $searchCriteriaBuilder
   ) {
-    $this->_pageFactory = $pageFactory;
-    $this->orderFactory = $orderFactory;
     $this->orderRepository = $orderRepository;
     $this->helperData = $helper;
     $this->searchCriteriaBuilder = $searchCriteriaBuilder;
@@ -69,7 +58,7 @@ class UpdateStatus extends Action implements CsrfAwareActionInterface {
     $logger = new \Zend\Log\Logger();
     $logger->addWriter($writer);
     try {
-      $params = $this->getRequest()->getPostValue();
+      $params = $this->getRequest()->getParams();
       if (
         $params['apiKey'] &&  $params['transaction_id'] &&
         $params['notification_id'] && $params['notification_date']
@@ -126,6 +115,10 @@ class UpdateStatus extends Action implements CsrfAwareActionInterface {
             }
             $event = $base->status;
             if ($event == static::STATUS_PAID or $event == static::STATUS_RESERVED) {
+              $totalPaid = $base->value_cents_paid / 100;
+              $paghiperTax = $totalPaid - $order->getGrandTotal();
+              $order->setBasePaghiperFeeAmount($paghiperTax);
+              $order->setPaghiperFeeAmount($paghiperTax);
               $order->setState(\Magento\Sales\Model\Order::STATE_PROCESSING);
               $order->setStatus(\Magento\Sales\Model\Order::STATE_PROCESSING);
               $this->orderRepository->save($order);
